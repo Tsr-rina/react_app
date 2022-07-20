@@ -1,22 +1,31 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Message from './components/Message';
 
 function App() {
+  const message = "Hello React Ya";
+  const fruits =  ["Melon", "Apple", "Lemon"]
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {/* Edit <code>src/App.js</code> and save to reload. */}
+          { message }
+          { fruits.map(item => <p>{item}</p>)}
+          <Message name = "MyName"/>
+          <Message name = "Woo"/>
+          <Message name = "Yummy"/>
         </p>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
