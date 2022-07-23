@@ -3,15 +3,16 @@ import './Todo.css';
 
 function TodoForm(props = {Done: false, Content: '', onSave: () => {} }){
     const [done, setDone ] = useState(!!props.Done);
-    const [content, setContent] = useState(props.Content);
+    const [content, setContent] = useState(props.Content || '');
 
     const handleSave = () => {
         const data = {
+            ...props,
             Done: done,
             Content: content,
         };
+        
         props.onSave(data);
-
         setDone(false);
         setContent('');
     };
@@ -24,6 +25,10 @@ function TodoForm(props = {Done: false, Content: '', onSave: () => {} }){
                 <textarea value={content} onChange={e => setContent(e.target.value)}/>
             </div>
             <button className="btn" onClick={handleSave}>Save</button>
+            {/* IDがあるときキャンセルボタンを表示 */}
+            {props.ID && (
+                <button className="btn" onClick={props.onCancel}>Cancel</button>
+            )}
         </div>
     );
 }
