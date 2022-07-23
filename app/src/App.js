@@ -16,6 +16,16 @@ function App() {
       UpdatedAt: (new Date()).toISOString(),
     },
   ]);
+  const handleUpdate = data => {
+    const now = (new Date()).toISOString();
+    data.UpdatedAt = now;
+    setTools(todos.map(item => {
+      if (item.ID === data.ID){
+        return data;
+      }
+      return item;
+    }))
+  }
   const handleCreate = data => {
     data.ID = Date();
     const now = (new Date()).toISOString();
@@ -23,10 +33,24 @@ function App() {
     data.UpdatedAt = now;
     setTools([...todos, data]);
   };
+
+  const handelDelete = id => {
+    // IDが一致する項目のindexを取得
+    const index = todos.findIndex(item => item.ID === id);
+    if (index >= 0){
+      // new list
+      const newList = [...todos];
+      // delete element from list
+      newList.splice(index, 1);
+      // stateに反映
+      setTools(newList);
+    }
+  };
+  
   return (
     <div className='App'>
       <TodoFrom onSave={handleCreate}/>
-      {todos.map(item => <Todo key={item.ID} {...item}/>)}
+      {todos.map(item => <Todo key={item.ID} {...item} onSave={handleUpdate} onDelete={handelDelete}/>)}
     </div>
   );
 }
