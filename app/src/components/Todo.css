@@ -1,14 +1,14 @@
 .todo {
     display: flex;
     width: 100%;
-    min-height: 60px;
+    min-height: 30px;
     align-items: stretch;
-    border: 1px solid #ccc;
+    border: 5px solid lightblue;
     border-bottom: 0;
 }
 
 .todo:last-child {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 5px solid lightblue;
 }
 
 .todo .check {
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #00cc00;
+    color: palevioletred;
     font-weight: bold;
     font-size: xx-large;
 }
@@ -42,6 +42,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    font-weight: bold;
 }
 
 .todo .body .header .date {
@@ -51,6 +52,7 @@
 
 .todo .body .content {
     padding: 4px;
+    font-weight: bold;
 }
 
 .todo .body textarea {
@@ -63,5 +65,7 @@
     width: 50px;
     height: 50px;
     margin: 5px;
+    background-color: yellowgreen;
+    border-radius: 30%;
 }
 
