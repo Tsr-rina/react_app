@@ -21,14 +21,16 @@ function Todo(props) {
     return (
         <div className="todo">
             <div className="check">
-                {props.Done && <span>✔︎</span>}
+                {/* Donがtrueのときヒヨコを表示する */}
+                {props.Done && <span>🐥</span>}
             </div>
             <div className="body">
                 <div className="header">
+                    {/* createAtとUpdateAtを表示 */}
                     <span className="date">CreateAt: {props.CreateAt} </span>
                     <span className="date">UpdateAt: {props.UpdateAt} </span>
                 </div>
-
+                {/* contentに書かれているものを表示 */}
                 <div className="content">{props.Content}</div>
             </div>
             <button className="btn" onClick={() => setEdit(true)}>Edit</button>
