@@ -12,6 +12,20 @@
   margin-left: 40px;
 }
 
+.App .App-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: greenyellow;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.memo {
+  background-color: aquamarine;
+  margin: 10%;
+}
+
 /* .App-logo {
   height: 40vmin;
 }

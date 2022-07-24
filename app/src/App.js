@@ -5,13 +5,19 @@ import Todo from './components/Todo';
 import TodoFrom from './components/TodoForm';
 import Message from './components/Message';
 import NameForm from './components/NameForm';
+import Sample from './components/sample';
+import Fruits_select from './components/Fruits_select';
+import LeftMemo from './components/LeftMemo';
+import ShowText from './components/ShowText';
 
 function App() {
+  // const[状態の変数, 状態を変更するための関数] = useState(状態の初期値);
   const [todos, setTools] = useState([
     {
       ID:1,
       Content: 'hoge',
       Done: true,
+      // toISOStringはUTCの文字列(ISO8601形式)に変換する
       CreateAt: (new Date()).toISOString(),
       UpdatedAt: (new Date()).toISOString(),
     },
@@ -46,11 +52,29 @@ function App() {
       setTools(newList);
     }
   };
+
+  const [memo, SetMemo] = useState("");
+  const handleMemoInput = (e) => {
+    SetMemo(e.target.value);
+  }
   
   return (
     <div className='App'>
+      <div className='App-header'>
+        <span>React Try However</span>
+      </div>
       <TodoFrom onSave={handleCreate}/>
+      {/* todosの中のものをitemを使って表示 item.IDとか */}
       {todos.map(item => <Todo key={item.ID} {...item} onSave={handleUpdate} onDelete={handelDelete}/>)}
+      <Sample/>
+      <Fruits_select/>
+      
+      <div className='memo'>
+        <LeftMemo value={memo} onChangeMemo={value => SetMemo(value)}/>
+        <div className='RightMemo'>
+          <ShowText memo={memo}/>
+        </div>     
+      </div>
     </div>
   );
 }

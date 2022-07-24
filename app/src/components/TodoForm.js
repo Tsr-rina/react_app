@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import './Todo.css';
 
 function TodoForm(props = {Done: false, Content: '', onSave: () => {} }){
+
     const [done, setDone ] = useState(!!props.Done);
+    // props.contentか何も入っていないか
     const [content, setContent] = useState(props.Content || '');
 
     const handleSave = () => {
         const data = {
             ...props,
             Done: done,
+            // contentに値が入っていればそれが出力される
             Content: content,
         };
         
