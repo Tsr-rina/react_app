@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import LeftMemo from "./LeftMemo";
 
 import Message from "./Message";
-import NameForm from "./NameForm";
 
 function Sample(){
     const [name, setName] = useState("");
