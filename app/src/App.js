@@ -34,10 +34,13 @@ function Header(){
 
 function Main(props){
   return(
-    <div className='work'>
-      <h3>{props.theme}</h3>
-      <p>{props.exp}</p>
-      <p><a href={props.link}>ここから</a></p>
+    <div className='work_container'>
+      <div className='work'>
+        <h3>{props.theme}</h3>
+        <p>{props.exp}</p>
+        <p>{props.attention}</p>
+        <p><a href={props.link}>ここから</a></p>
+      </div>
     </div>
   );
 }
@@ -52,9 +55,10 @@ function App(){
   return(
     <React.Fragment>
     <Header/>
-    <Main theme="MyArtSite" exp="自身で描いた絵やデザインした洋服を掲載しているサイトです" link="https://tsr-rina.github.io/myartsite.github.io/"/>
-    <Main theme="WebAR" exp="WebARを試してみました.スマホからできます." link="https://tsr-rina.github.io/webar_maker/"/>
-    <Main theme="WebAPI Small Art Museum" exp="自分で絵画のWebAPIを作成し、絵画の解説を閲覧できるサービスを作成しました。解説等は全てWikipediaから引用しています" link="https://webapi-flask-app.vercel.app"/>
+    <Main theme="MyArtSite" exp="自身で描いた絵やデザインした洋服を掲載しているサイトです." link="https://tsr-rina.github.io/myartsite.github.io/" attention=""/>
+    <Main theme="WebAR" exp="WebARを試してみました.スマホからできます." link="https://tsr-rina.github.io/webar_maker/" attention=""/>
+    <Main theme="WebAPI Small Art Museum" exp="自分で絵画のWebAPIを作成し、絵画の解説を閲覧できるサービスを作成しました.解説等は全てWikipediaから引用しています." link="https://webapi-flask-app.vercel.app" attention=""/>
+    <Main theme="SNSなアプリ？" exp="FlutterとFirebaseを使ってアプリを作成しました." link="https://drive.google.com/file/d/1u8140aFV6LxsKFmTcHGcUth1etTuBYyI/view?usp=sharing" attention="※スマートフォンから閲覧可"/>
     </React.Fragment>
   );
 }
