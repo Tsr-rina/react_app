@@ -1,7 +1,30 @@
 .header{
     text-align: center;
+    margin: 7.5%;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    
+}
+
+.work_container{
+    margin:6%;
 }
 
 .work{
     text-align: center;
+    padding: 2.2%;
+    margin:25px;
+    border: 3px solid black;
+    width: 300px;
+    height: 310px;
+    /* width: 25%;
+    height: 35%; */
+    float: left;
+}
+.work h3{
+    text-align: left;
+}
+.work p{
+    text-align: left;
 }
